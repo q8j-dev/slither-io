@@ -1,0 +1,65 @@
+body {
+ background: #161c22;
+}
+
+input.sumsginp:focus {
+ outline: none;
+ background: none !important;
+}
+
+.sumsginp {
+ font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+ font-size: 15px;
+ word-wrap: break-word;
+ color: #e0e0ff;
+ background: none;
+ resize: none;
+ border: 0px;
+ height: 23px;
+ opacity: 1;
+ position: absolute;
+ left: 12px;
+ top: 10px;
+ vertical-align: middle;
+ display: inline-block;
+}
+
+.taho {
+ position: relative;
+ height: 43px;
+ border-radius: 29px;
+ border: 2px solid rgba(0, 0, 0, 1);
+ overflow: hidden;
+ display: inline-block;
+}
+
+#nick::placeholder {
+ color: #7070B0;
+ opacity: 1;
+}
+
+.nsi {
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ user-select: none;
+}
+
+.btnt {
+ outline: none;
+}
+
+.btn:link,
+.btn:visited {
+ opacity: .7;
+ text-decoration: none;
+}
+
+.btn:hover {
+ opacity: 1;
+ text-decoration: none;
+}
+
+.btn:active {
+ opacity: .5;
+ text-decoration: none;
+}
