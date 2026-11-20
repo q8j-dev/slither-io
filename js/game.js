@@ -4,7 +4,6 @@ var iioc = false;
 var nsr = false;
 var grq = document.getElementById("grq");
 var grqh = document.getElementById("grqh");
-var phqi = document.createElement("img");
 if (!TouchEvent) var TouchEvent = function() {};
 var lang = navigator.language || navigator.userLanguage;
 lang = lang.substr(0, 2);
@@ -349,468 +348,29 @@ function SortableSize(width, height, id) {
 var numsort_width = function(a, b) {
  return a.width - b.width
 };
-var sadg, sadu, sadd;
 var j, k, l, p;
 var xx, yy;
 var rad;
 var grw, grh;
 var elem, map, imgd;
 var ctx;
-var l;
-var p;
 var rw, rh;
-elem = document.createElement("canvas");
-grw = 2;
-grh = 56;
-elem.width = grw;
-elem.height = grh;
-ctx = elem.getContext("2d");
-map = ctx.getImageData(0, 0, grw, grh);
-imgd = map.data;
-l = imgd.length;
-p = 0;
-for (yy = 0; yy < grh; yy++) {
- j = (grh - 1 - yy) / (grh - 1);
- j = .5 * (1 - Math.cos(Math.PI * j));
- for (xx = 0; xx < grw; xx++) {
-  imgd[p] = Math.min(255, Math.floor(.85 * 64 + .5 * 64 * j));
-  imgd[p + 1] = Math.min(255, Math.floor(.85 * 128 + .5 * 128 * j));
-  imgd[p + 2] = Math.min(255, Math.floor(.85 * 96 + .5 * 96 * j));
-  imgd[p + 3] = 255;
-  p += 4
- }
-}
-ctx.putImageData(map, 0, 0);
-sadg = elem.toDataURL();
-elem = document.createElement("canvas");
-elem.width = grw;
-elem.height = grh;
-ctx = elem.getContext("2d");
-map = ctx.getImageData(0, 0, grw, grh);
-imgd = map.data;
-l = imgd.length;
-p = 0;
-for (yy = 0; yy < grh; yy++) {
- j = (grh - 1 - yy) / (grh - 1);
- j = .5 * (1 - Math.cos(Math.PI * j));
- for (xx = 0; xx < grw; xx++) {
-  imgd[p] = Math.min(255, Math.floor(1.5 * 48 + .95 * 48 * j));
-  imgd[p + 1] = Math.min(255, Math.floor(1.5 * 114 + .95 * 98 * j));
-  imgd[p + 2] = Math.min(255, Math.floor(1.5 * 88 + .95 * 87 * j));
-  imgd[p + 3] = 255;
-  p += 4
- }
-}
-ctx.putImageData(map, 0, 0);
-sadu = elem.toDataURL();
-elem = document.createElement("canvas");
-elem.width = grw;
-elem.height = grh;
-ctx = elem.getContext("2d");
-map = ctx.getImageData(0, 0, grw, grh);
-imgd = map.data;
-l = imgd.length;
-p = 0;
-for (yy = 0; yy < grh; yy++) {
- j = yy / (grh - 1);
- j = .5 * (1 - Math.cos(Math.PI * j));
- for (xx = 0; xx < grw; xx++) {
-  imgd[p] = Math.floor(.1 * 48 + .75 * 48 * j);
-  imgd[p + 1] = Math.floor(.1 * 70 + .75 * 70 * j);
-  imgd[p + 2] = Math.floor(.1 * 64 + .75 * 64 * j);
-  imgd[p + 3] = 255;
-  p += 4
- }
-}
-ctx.putImageData(map, 0, 0);
-sadd = elem.toDataURL();
-if (sadg.length > 32 && sadu.length > 32 && sadd.length > 32) addCss(".sadg1 { background-image:url(" + sadg + "); }  .sadu1 { background-image:url(" + sadu + "); }  .sadd1 { background-image:url(" + sadd + "); }");
-elem.width = grw;
-elem.height = grh;
-ctx = elem.getContext("2d");
-map = ctx.getImageData(0, 0, grw, grh);
-imgd = map.data;
-l = imgd.length;
-p = 0;
-for (yy = 0; yy < grh; yy++) {
- j = (grh - 1 - yy) / (grh - 1);
- j = .5 * (1 - Math.cos(Math.PI * j));
- for (xx = 0; xx < grw; xx++) {
-  imgd[p] = Math.min(255, Math.floor(.85 * 52 + .5 * 52 * j));
-  imgd[p + 1] = Math.min(255, Math.floor(.85 * 96 + .5 * 96 * j));
-  imgd[p + 2] = Math.min(255, Math.floor(.85 * 144 + .5 * 144 * j));
-  imgd[p + 3] = 255;
-  p += 4
- }
-}
-ctx.putImageData(map, 0, 0);
-sadg = elem.toDataURL();
-elem = document.createElement("canvas");
-elem.width = grw;
-elem.height = grh;
-ctx = elem.getContext("2d");
-map = ctx.getImageData(0, 0, grw, grh);
-imgd = map.data;
-l = imgd.length;
-p = 0;
-for (yy = 0; yy < grh; yy++) {
- j = (grh - 1 - yy) / (grh - 1);
- j = .5 * (1 - Math.cos(Math.PI * j));
- for (xx = 0; xx < grw; xx++) {
-  imgd[p] = Math.min(255, Math.floor(1.5 * 48 + .95 * 48 * j));
-  imgd[p + 1] = Math.min(255, Math.floor(1.5 * 88 + .95 * 87 * j));
-  imgd[p + 2] = Math.min(255, Math.floor(1.5 * 114 + .95 * 98 * j));
-  imgd[p + 3] = 255;
-  p += 4
- }
-}
-ctx.putImageData(map, 0, 0);
-sadu = elem.toDataURL();
-elem = document.createElement("canvas");
-elem.width = grw;
-elem.height = grh;
-ctx = elem.getContext("2d");
-map = ctx.getImageData(0, 0, grw, grh);
-imgd = map.data;
-l = imgd.length;
-p = 0;
-for (yy = 0; yy < grh; yy++) {
- j = yy / (grh - 1);
- j = .5 * (1 - Math.cos(Math.PI * j));
- for (xx = 0; xx < grw; xx++) {
-  imgd[p] = Math.floor(.1 * 48 + .75 * 48 * j);
-  imgd[p + 1] = Math.floor(.1 * 54 + .75 * 54 * j);
-  imgd[p + 2] = Math.floor(.1 * 70 + .75 * 70 * j);
-  imgd[p + 3] = 255;
-  p += 4
- }
-}
-ctx.putImageData(map, 0, 0);
-sadd = elem.toDataURL();
-if (sadg.length > 32 && sadu.length > 32 && sadd.length > 32) addCss(".sadg2 { background-image:url(" + sadg + "); }  .sadu2 { background-image:url(" + sadu + "); }  .sadd2 { background-image:url(" + sadd + "); }");
-var mos = [];
-var whmos = false;
-var swmup = false;
 
-function mkBtn(elemid, prefix, iw, ih) {
- var ho = document.createElement("div");
- var elem;
- if (elemid.tagName) elem = elemid;
- else {
-  elem = document.getElementById(elemid);
-  elem.style.width = iw + "px";
-  elem.style.height = ih + "px";
-  ho.style.width = iw + "px";
-  ho.style.height = ih + "px"
- }
+function makeTextBtn(s, variant) {
+ var btn = document.createElement("button");
+ btn.type = "button";
+ btn.className = "ui-btn " + (variant || "ui-btn-primary");
+ btn.textContent = s;
  var o = {};
- o.lic = 0;
- o.elem = elem;
- o.md = false;
- o.mo = false;
- o.mdf = 0;
- o.mof = 0;
- var str = true;
- if (elem.style)
-  if (elem.style.position) {
-   if ((elem.style.position + "").toLowerCase() == "absolute") str = false;
-   if ((elem.style.position + "").toLowerCase() == "fixed") str = false
-  } if (str) elem.style.position =
-  "relative";
- ho.style.position = "absolute";
- ho.style.opacity = 0;
- ho.style.left = "0px";
- ho.style.top = "0px";
- elem.appendChild(ho);
- o.ho = ho;
- o.alic = function() {
-  this.lic++;
-  if (this.lic == 3) {
-   this.ho.style.opacity = 1;
-   if (this.onload) this.onload()
-  }
- };
- mos.push(o);
+ o.elem = btn;
+ o.disabled = false;
  o.setEnabled = function(e) {
-  if (e) {
-   this.disabled = false;
-   this.upi.style.opacity = this.mof;
-   this.downi.style.opacity = this.mdf;
-   this.elem.style.opacity = 1;
-   this.elem.style.cursor = "pointer"
-  } else {
-   this.disabled = true;
-   this.upi.style.opacity = 0;
-   this.downi.style.opacity = 0;
-   this.elem.style.opacity =
-    .38;
-   this.elem.style.cursor = "default"
-  }
+  this.disabled = !e;
+  this.elem.disabled = !e
  };
- if (!prefix) ho.style.opacity = 1;
- else
-  for (var k = 1; k <= 3; k++) {
-   var ii = document.createElement("img");
-   ii.draggable = false;
-   ii.style.position = "absolute";
-   ii.style.left = "0px";
-   ii.style.top = "0px";
-   ii.border = 0;
-   ii.width = iw;
-   ii.height = ih;
-   ii.className = "nsi";
-   ho.appendChild(ii);
-   if (k == 1) {
-    o.normi = ii;
-    ii.onload = function() {
-     for (var i = mos.length - 1; i >= 0; i--) {
-      var o = mos[i];
-      if (o.normi == this) {
-       o.alic();
-       break
-      }
-     }
-    };
-    ii.src = prefix + ".png"
-   } else if (k == 2) {
-    o.upi = ii;
-    ii.style.opacity = 0;
-    ii.onload = function() {
-     for (var i =
-       mos.length - 1; i >= 0; i--) {
-      var o = mos[i];
-      if (o.upi == this) {
-       o.alic();
-       break
-      }
-     }
-    };
-    ii.src = prefix + "up.png"
-   } else if (k == 3) {
-    o.downi = ii;
-    ii.style.opacity = 0;
-    ii.onload = function() {
-     for (var i = mos.length - 1; i >= 0; i--) {
-      var o = mos[i];
-      if (o.downi == this) {
-       o.alic();
-       break
-      }
-     }
-    };
-    ii.src = prefix + "down.png"
-   }
-  }
- elem.onmouseenter = function() {
-  for (var k = mos.length - 1; k >= 0; k--) {
-   var o = mos[k];
-   if (o.elem == this) {
-    if (!o.disabled)
-     if (!o.mo) {
-      o.mo = true;
-      if (o.onmouseenter) o.onmouseenter();
-      whmos = true
-     } break
-   }
-  }
- };
- elem.onmouseleave = function() {
-  for (var k = mos.length - 1; k >=
-   0; k--) {
-   var o = mos[k];
-   if (o.elem == this) {
-    if (o.mo) {
-     o.mo = false;
-     if (o.onmouseleave) o.onmouseleave();
-     whmos = true
-    }
-    break
-   }
-  }
- };
- elem.onmousedown = function(e) {
-  for (var k = mos.length - 1; k >= 0; k--) {
-   var o = mos[k];
-   if (o.elem == this) {
-    if (!o.disabled)
-     if (!o.md) {
-      o.md = true;
-      if (o.onmousedown) o.onmousedown(e, o);
-      whmos = true;
-      return false
-     } break
-   }
-  }
- };
- elem.onmouseup = elem.ondragend = function(e) {
-  for (var k = mos.length - 1; k >= 0; k--) {
-   var o = mos[k];
-   if (o.elem == this) {
-    if (o.md) {
-     o.mdf = 1;
-     o.md = false;
-     if (o.onmouseup) {
-      o.onmouseup(e, o);
-      if (is_mobile) o.elem.onmouseleave()
-     }
-     whmos =
-      true
-    }
-    break
-   }
-  }
- };
- if (!swmup) {
-  swmup = true;
-  window.onmouseup = window.ondragover = window.ondragend = function() {
-   for (var i = mos.length - 1; i >= 0; i--) {
-    var o = mos[i];
-    if (o.md) {
-     o.md = false;
-     whmos = true
-    }
-   }
-  }
- }
- return o
-}
-
-function hmos() {
- var wa;
- var dstf = false;
- for (var i = mos.length - 1; i >= 0; i--) {
-  var o = mos[i];
-  wa = false;
-  if (o.mo) {
-   if (o.mof != 1) {
-    dstf = true;
-    o.mof += .33;
-    if (o.mof >= 1) o.mof = 1;
-    wa = true
-   }
-  } else if (o.mof != 0) {
-   dstf = true;
-   o.mof -= .2;
-   if (o.mof <= 0) o.mof = 0;
-   wa = true
-  }
-  if (wa)
-   if (o.disabled) o.upi.style.opacity = 0;
-   else o.upi.style.opacity = o.mof;
-  wa = false;
-  if (o.md) {
-   if (o.mdf != 1) {
-    dstf = true;
-    o.mdf += .33;
-    if (o.mdf >= 1) o.mdf = 1;
-    wa = true
-   }
-  } else if (o.mdf != 0) {
-   dstf = true;
-   o.mdf -= .2;
-   if (o.mdf <= 0) o.mdf = 0;
-   wa = true
-  }
-  if (wa)
-   if (o.disabled) o.downi.style.opacity = 0;
-   else o.downi.style.opacity =
-    o.mdf
- }
- if (!dstf) whmos = false
-}
-
-function makeTextBtn(s, bh, ts, br, bgm) {
- if (!bh) bh = 56;
- if (bh > 56) bh = 56;
- if (!ts) ts = 15;
- if (!br) br = 14;
- var btndiv = document.createElement("div");
- btndiv.className = "btnt nsi sadg" + bgm;
- var st = btndiv.style;
- st.position = "absolute";
- st.width = "auto";
- st.color = "#ffffff";
- st.fontWeight = "bold";
- st.textAlign = "center";
- st.fontFamily = 'Arial, "Helvetica Neue", Helvetica, sans-serif';
- st.fontSize = ts + "px";
- btndiv.textContent = s;
- st.cursor = "pointer";
- document.body.appendChild(btndiv);
- var btnw = Math.ceil(35 + btndiv.offsetWidth);
- document.body.removeChild(btndiv);
- btndiv.textContent = "";
- st.width = btnw + "px";
- st.height = bh + "px";
- st.lineHeight = bh + "px";
- if (!is_mobile) st.boxShadow = "0px 3px 20px rgba(0,0,0, .75)";
- st.borderRadius = br + "px";
- var btnu = document.createElement("div");
- var st = btnu.style;
- st.position = "absolute";
- st.left = st.top = "0px";
- st.width = btnw + "px";
- st.height = bh + "px";
- st.borderRadius = br + 1 + "px";
- st.opacity = 0;
- btnu.className = "sadu" + bgm;
- var btnd = document.createElement("div");
- var st = btnd.style;
- st.position = "absolute";
- st.left = st.top = "-1px";
- st.width = btnw + 2 + "px";
- st.height = bh +
-  2 + "px";
- st.borderRadius = br + "px";
- st.opacity = 0;
- btnd.className = "sadd" + bgm;
- var o = mkBtn(btndiv);
- o.a = 1;
- o.ho.appendChild(btnu);
- o.upi = btnu;
- o.ho.appendChild(btnd);
- o.downi = btnd;
- o.ts = ts;
- o.ww = btnw;
- o.bgm = bgm;
  o.setText = function(t) {
-  var testdiv = document.createElement("div");
-  testdiv.className = "nsi sadg" + this.bgm;
-  var st = testdiv.style;
-  st.position = "absolute";
-  st.width = "auto";
-  st.color = "#ffffff";
-  st.fontWeight = "bold";
-  st.textAlign = "center";
-  st.fontFamily = 'Arial, "Helvetica Neue", Helvetica, sans-serif';
-  st.fontSize = this.ts +
-   "px";
-  testdiv.textContent = t;
-  document.body.appendChild(testdiv);
-  var btnw = Math.ceil(35 + testdiv.offsetWidth);
-  document.body.removeChild(testdiv);
-  this.btnf.textContent = t;
-  this.ww = btnw;
-  this.elem.style.width = btnw + "px";
-  this.upi.style.width = btnw + "px";
-  this.downi.style.width = btnw + 2 + "px";
-  this.btnf.style.width = btnw + "px"
+  this.elem.textContent = t
  };
- var btnf = document.createElement("div");
- btndiv.appendChild(btnf);
- o.btnf = btnf;
- var st = btnf.style;
- st.position = "absolute";
- st.left = st.top = "0px";
- st.width = btnw + "px";
- st.height = bh + "px";
- st.borderRadius = br +
-  "px";
- btnf.textContent = s;
- btnf.className = "nsi";
- st.color = "#ffffff";
- st.opacity = .9;
- o.ho.appendChild(btnf);
  return o
 }
 
@@ -870,7 +430,7 @@ function loginFade() {
   bskh.style.opacity = login_fr;
   skodiv.style.opacity = login_fr;
   revdiv.style.opacity = login_fr;
-  mc.style.opacity = login_fr;
+  if (choosing_skin) mc.style.opacity = login_fr;
   loch.style.opacity = login_fr * mmal
  }
 }
@@ -880,7 +440,7 @@ var rstr = "Reset";
 if (lang == "de") rstr = "L\u00f6schen";
 else if (lang == "fr") rstr = "Effacer";
 else if (lang == "pt") rstr = "Apagar";
-var o = makeTextBtn(String.fromCharCode(160) + rstr + String.fromCharCode(160), 47, 20, 34, 1);
+var o = makeTextBtn(rstr, "ui-btn-secondary");
 var revdiv = o.elem;
 revdiv.style.zIndex = 53;
 revdiv.style.position = "fixed";
@@ -901,7 +461,7 @@ var sstr = "Save";
 if (lang == "de") sstr = "OK";
 else if (lang == "fr") sstr = "Bien";
 else if (lang == "pt") sstr = "OK";
-var o = makeTextBtn(String.fromCharCode(160) + sstr + String.fromCharCode(160), 47, 20, 34, 1);
+var o = makeTextBtn(sstr);
 var sko_btn = o;
 var skodiv = o.elem;
 skodiv.style.zIndex = 53;
@@ -976,18 +536,14 @@ else if (lang == "fr") {
  pstr = "Joga";
  nick.placeholder = "Apelido"
 }
-var o = makeTextBtn(String.fromCharCode(160) + pstr + String.fromCharCode(160), 47, 20, 34, 1);
+var o = makeTextBtn(pstr, "ui-btn-primary ui-btn-play");
 var play_btn = o;
 var pbdiv = o.elem;
-pbdiv.style.position = "relative";
-pbdiv.style.display = "inline-block";
-pbdiv.style.marginTop = "20px";
-pbdiv.style.marginBottom = "50px";
 var playh = document.getElementById("playh");
 playh.style.opacity = 0;
 playh.appendChild(pbdiv);
 var tips = document.getElementById("tips");
-var tipss = ["Eat to grow longer!", "Don't run into other players!", "When longer, hold the mouse for a speed boost!"];
+var tipss = ["Eat to grow longer", "Keep your head away from other snakes", "Once you're longer, hold the mouse to boost"];
 if (lang == "de") tipss = ["Esse um zu wachsen!", "Klicke f\u00fcr mehr Geschwindigkeit!", "Bewege dich nicht in andere Schlangen!"];
 else if (lang == "fr") tipss = ["Mange pour cro\u00eetre !", "Clique pour courir !", "Ne laissez pas votre t\u00eate toucher d'autres serpents !"];
 else if (lang == "pt") tipss = ["Coma para crescer!", "Clique para correr!", "N\u00e3o deixe que sua cabe\u00e7a para tocar outras cobras!"];
@@ -1021,115 +577,29 @@ mc.className = "nsi";
 document.body.appendChild(mc);
 mc.style.display = "none";
 mc.style.pointerEvents = "none";
-var lb_w = 180;
 var lbh = document.createElement("div");
-lbh.className = "nsi";
-lbh.style.position = "fixed";
-lbh.style.right = "4px";
-lbh.style.top = "4px";
-lbh.style.textAlign = "center";
-lbh.style.width = lb_w + 64 + 16 + 30 - 5 + "px";
-lbh.style.height = "28px";
-lbh.style.color = "#ffffff";
-lbh.style.fontFamily = 'Arial, "Helvetica Neue", Helvetica, sans-serif';
-lbh.style.fontSize = "21px";
-lbh.style.fontWeight = "bold";
-lbh.style.overflow = "hidden";
-lbh.style.opacity = .5;
-lbh.style.zIndex = 7;
+lbh.className = "nsi hud-panel";
+lbh.id = "leaderboard";
 lbh.style.display = "none";
-lbh.style.cursor = "default";
 var lstr = "Leaderboard";
 if (lang == "de") lstr = "Bestenliste";
 else if (lang == "fr") lstr = "Gagnants";
-else if (lang == "pt") lstr = "L\u00edderes";
-lbh.textContent = lstr;
-trf(lbh, agpu);
-document.body.appendChild(lbh);
-var lbs = document.createElement("div");
-lbs.className = "nsi";
-lbs.style.position = "fixed";
-lbs.style.textAlign = "center";
-lbs.style.right = "4px";
-lbs.style.top = "32px";
-lbs.style.width = "50px";
-lbs.style.height = "800px";
-lbs.style.color = "#ffffff";
-lbs.style.fontFamily = 'Arial, "Helvetica Neue", Helvetica, sans-serif';
-lbs.style.fontSize = "12px";
-lbs.style.overflow = "hidden";
-lbs.style.opacity = .7;
-lbs.style.zIndex = 7;
-lbs.style.display = "none";
-lbs.style.cursor = "default";
-lbs.style.lineHeight = "150%";
-trf(lbs, agpu);
-document.body.appendChild(lbs);
-var lbn = document.createElement("div");
-lbn.className = "nsi";
+else if (lang == "pt") lstr = "Líderes";
+var lbt = document.createElement("h2");
+lbt.textContent = lstr;
+lbh.appendChild(lbt);
+var lbn = document.createElement("ol");
 lbn.translate = "no";
-lbn.style.position = "fixed";
-lbn.style.textAlign = "left";
-lbn.style.whiteSpace = "nowrap";
-lbn.style.right = "64px";
-lbn.style.top = "32px";
-lbn.style.width = lb_w + "px";
-lbn.style.height = "800px";
-lbn.style.color = "#ffffff";
-lbn.style.fontFamily = 'Arial, "Helvetica Neue", Helvetica, sans-serif';
-lbn.style.fontSize = "12px";
-lbn.style.overflow = "hidden";
-lbn.style.opacity = .7;
-lbn.style.zIndex = 8;
-lbn.style.display = "none";
-lbn.style.cursor = "default";
-lbn.style.lineHeight = "150%";
-trf(lbn, agpu);
-document.body.appendChild(lbn);
-var lbp = document.createElement("div");
-lbp.className = "nsi";
-lbp.style.position = "fixed";
-lbp.style.textAlign = "right";
-lbp.style.right = lb_w + 64 + 16 + "px";
-lbp.style.top = "32px";
-lbp.style.width = "30px";
-lbp.style.height = "800px";
-lbp.style.color = "#ffffff";
-lbp.style.fontFamily = 'Arial, "Helvetica Neue", Helvetica, sans-serif';
-lbp.style.fontSize = "12px";
-lbp.style.overflow = "hidden";
-lbp.style.opacity = .7;
-lbp.style.zIndex = 9;
-lbp.style.display = "none";
-lbp.style.cursor = "default";
-lbp.style.lineHeight = "150%";
-trf(lbp, agpu);
-document.body.appendChild(lbp);
+lbh.appendChild(lbn);
+document.body.appendChild(lbh);
 var lbf = document.createElement("div");
 lbf.className = "nsi";
-lbf.style.position = "fixed";
-lbf.style.left = "8px";
-lbf.style.bottom = "4px";
-lbf.style.width = "280px";
-lbf.style.height = "37px";
-lbf.style.color = "#ffffff";
-lbf.style.fontFamily = 'Arial, "Helvetica Neue", Helvetica, sans-serif';
-lbf.style.fontSize = "12px";
-lbf.style.overflow = "hidden";
-lbf.style.opacity = .5;
-lbf.style.zIndex = 7;
+lbf.id = "hud-stats";
 lbf.style.display = "none";
-lbf.style.cursor = "default";
-lbf.style.lineHeight = "150%";
-trf(lbf, agpu);
 document.body.appendChild(lbf);
 var loch = document.createElement("div");
 loch.className = "nsi";
-loch.style.position = "fixed";
-loch.style.right = "16px";
-loch.style.bottom = "16px";
-loch.style.width = loch.style.height = "124px";
-loch.style.zIndex = 10;
+loch.id = "minimap";
 loch.style.display = "none";
 document.body.appendChild(loch);
 var loc = document.createElement("img");
@@ -1142,11 +612,11 @@ var myloc = document.createElement("img");
 var lc = document.createElement("canvas");
 lc.width = lc.height = 14;
 var ctx = lc.getContext("2d");
-ctx.fillStyle = "#FFFFFF";
-ctx.strokeStyle = "#000000";
+ctx.fillStyle = "#ffffff";
+ctx.strokeStyle = "#131a26";
 ctx.lineWidth = 2;
 ctx.beginPath();
-ctx.arc(7, 7, 2.5, 0, pi2);
+ctx.arc(7, 7, 3.5, 0, pi2);
 ctx.stroke();
 ctx.fill();
 myloc.src = lc.toDataURL();
@@ -1163,39 +633,43 @@ var bgi2 = document.createElement("canvas");
 var bgp2 = null;
 var bgee = null;
 var bgees = [];
-var bgw2 = 599;
-var bgh2 = 519;
-var bg_hex = null;
-var ii = document.createElement("img");
-ii.onload = function() {
- bgi2.width = bgw2;
- bgi2.height = bgh2;
- var ctx = bgi2.getContext("2d");
- try {
-  bg_hex = this
- } catch (e) {}
-};
-ii.src = "img/backgrounds/hex.jpg";
+var arena_base = "#131a26";
+var arena_dot_gap = 44;
+var bgw2 = arena_dot_gap * 12;
+var bgh2 = arena_dot_gap * 12;
+var bg_hex = buildArenaTile();
+
+function buildArenaTile() {
+ var c = document.createElement("canvas");
+ c.width = bgw2;
+ c.height = bgh2;
+ var ctx = c.getContext("2d");
+ ctx.fillStyle = arena_base;
+ ctx.fillRect(0, 0, bgw2, bgh2);
+ ctx.fillStyle = "#1e2737";
+ for (var yy = arena_dot_gap / 2; yy < bgh2; yy += arena_dot_gap)
+  for (var xx = arena_dot_gap / 2; xx < bgw2; xx += arena_dot_gap) {
+   ctx.beginPath();
+   ctx.arc(xx, yy, 2.4, 0, pi2);
+   ctx.fill()
+  }
+ return c
+}
 
 function rdgbg() {
- if (ggbg) {
-  if (!gbgmc) gbgmc = document.createElement("canvas");
-  gbgmc.width = mww;
-  gbgmc.height = mhh;
-  var ctx = gbgmc.getContext("2d");
-  try {
-   ctx.drawImage(gbgi, 0, 0, 512, 512, 0, 0, mww, mhh)
-  } catch (e) {}
- }
+ if (!gbgmc) gbgmc = document.createElement("canvas");
+ gbgmc.width = mww;
+ gbgmc.height = mhh;
+ var ctx = gbgmc.getContext("2d");
+ var rad = Math.sqrt(mww * mww + mhh * mhh) / 2;
+ var g = ctx.createRadialGradient(mww / 2, mhh / 2, rad * .45, mww / 2, mhh / 2, rad);
+ g.addColorStop(0, "rgba(6, 9, 15, 0)");
+ g.addColorStop(1, "rgba(6, 9, 15, .45)");
+ ctx.fillStyle = g;
+ ctx.fillRect(0, 0, mww, mhh)
 }
-var ggbg = false;
 var gbgmc = null;
-var gbgi = document.createElement("img");
-gbgi.onload = function() {
- ggbg = true;
- rdgbg()
-};
-gbgi.src = "img/backgrounds/glow.jpg";
+rdgbg();
 
 function newDeadpool() {
  var dpo = {};
@@ -1278,7 +752,6 @@ var tasty = 0;
 var shifty = false;
 var rr, gg, bb;
 var render_mode = 2;
-if (is_mobile) render_mode = 1;
 var wumsts = false;
 var rank = 0;
 var best_rank = 999999999;
@@ -1436,15 +909,12 @@ function setMinimapSize(sz, force) {
   lc.width = lc.height = rad * 2 + 24;
   var ctx = lc.getContext("2d");
   ctx.save();
-  ctx.fillStyle = "#202630";
-  ctx.shadowBlur = 12;
-  ctx.shadowOffsetY = 3;
-  ctx.shadowColor = "#000000";
+  ctx.fillStyle = "#1b2232";
   ctx.beginPath();
   ctx.arc(xx, yy, rad, 0, pi2);
   ctx.fill();
   ctx.restore();
-  ctx.fillStyle = "#404650";
+  ctx.fillStyle = "#212a3c";
   ctx.beginPath();
   ctx.moveTo(rad + 12, rad + 12);
   ctx.arc(xx, yy, rad, 0, Math.PI / 2);
@@ -1455,7 +925,7 @@ function setMinimapSize(sz, force) {
   ctx.arc(xx, yy, rad, Math.PI, 3 * Math.PI / 2);
   ctx.lineTo(xx, yy);
   ctx.fill();
-  ctx.strokeStyle = "#202630";
+  ctx.strokeStyle = "#2e3850";
   ctx.lineWidth = 1;
   ctx.beginPath();
   ctx.moveTo(xx, yy - rad);
@@ -1470,7 +940,7 @@ function setMinimapSize(sz, force) {
   loc.style.position = "absolute";
   loc.style.left = "0px";
   loc.style.top = "0px";
-  loc.style.opacity = .45;
+  loc.style.opacity = 1;
   loc.style.zIndex = 11;
   trf(loc, agpu);
   asmc.width = rad * 2;
@@ -1493,9 +963,9 @@ function setMinimapSize(sz, force) {
 function startShowGame() {
  llgmtm = timeObj.now();
  login_iv = setInterval(loginFade, 25);
- mc.style.opacity = 0;
+ if (choosing_skin) mc.style.opacity = 0;
  mc.style.display = "inline";
- lbh.style.opacity = lbs.style.opacity = lbn.style.opacity = lbp.style.opacity = lbf.style.opacity =0;
+ lbh.style.opacity = lbf.style.opacity = 0;
  loch.style.opacity = 0;
  lb_fr = -1;
  bgi2.width = bgw2;
@@ -1533,6 +1003,7 @@ function setSkin(o, cv, ca) {
  o.eo = 0;
  o.swell = 0;
  o.cusk = false;
+ o.grad = false;
  if (ca != null) {
   var tm = ca.length;
   if (tm >= 10) {
@@ -2004,7 +1475,12 @@ function setSkin(o, cv, ca) {
   else if (cv == 63) rbcs = [7, 7, 7, 11, 11, 11];
   else if (cv == 64) rbcs = [16, 16, 11, 11];
   else if (cv == 65) rbcs = [4, 4, 4, 4, 9, 9, 9, 9];
-  else cv = cv % 9;
+  else if (cv >= grad_skin_base && cv < grad_skin_base + grad_ramps.length) {
+   rbcs = grad_ramps[cv - grad_skin_base];
+   o.grad = true;
+   o.gc0 = grad_palettes[cv - grad_skin_base][0];
+   o.gc1 = grad_palettes[cv - grad_skin_base][1]
+  } else cv = cv % 9;
   if (rbcs) cv = rbcs[0];
   o.rbcs = rbcs;
   o.cv = cv
@@ -2709,9 +2185,55 @@ var per_color_imgs = [];
 var rrs = [192, 144, 128, 128, 238, 255, 255, 255, 224, 255, 144, 80, 255, 40, 100, 120, 72, 160, 255, 56, 56, 78, 255, 101, 128, 60, 0, 217, 255, 144, 32, 240, 240, 240, 240, 32, 40, 104, 0, 104, 0, 128];
 var ggs = [128, 153, 208, 255, 238, 160, 144, 64, 48, 255, 153, 80, 192, 136, 117, 134, 84, 80, 224, 68, 68, 35, 86, 200, 132, 192, 255, 69, 64, 144, 32, 32, 240, 144, 32, 240, 60, 128, 0, 40, 0, 128];
 var bbs = [255, 255, 208, 128, 112, 96, 144, 64, 224, 255, 255, 80, 80, 96, 255, 255, 255, 255, 64, 255, 255, 192, 9, 232, 144, 72, 83, 69, 64, 144, 240, 32, 32, 32, 240, 32, 173, 255, 112, 170, 0, 255];
+var base_palette = [
+ [138, 108, 255],
+ [63, 176, 255],
+ [25, 214, 192],
+ [154, 230, 46],
+ [255, 204, 31],
+ [255, 154, 46],
+ [255, 90, 61],
+ [255, 79, 154],
+ [216, 108, 255]
+];
+for (var i = 0; i < base_palette.length; i++) {
+ rrs[i] = base_palette[i][0];
+ ggs[i] = base_palette[i][1];
+ bbs[i] = base_palette[i][2]
+}
+var grad_palettes = [
+ [0xffa21f, 0xff2e7a],
+ [0x19e3c9, 0x7a5cff],
+ [0xff4fa3, 0x9b5cff],
+ [0xffd21f, 0xff5a1f],
+ [0x3fd0ff, 0x6a5cff],
+ [0xa6e81f, 0x19c9a6],
+ [0xff7a3d, 0xff2e5e],
+ [0xe25cff, 0x3fa2ff],
+ [0x4ff0b0, 0x3f8cff],
+ [0xb38cff, 0xff6fb5],
+ [0xff3d5a, 0xffb52e],
+ [0x2fd6ff, 0x2fe08a]
+];
+var grad_steps = 12;
+var grad_ramps = [];
+var grad_skin_base = 66;
+for (var i = 0; i < grad_palettes.length; i++) {
+ var ca0 = grad_palettes[i][0];
+ var ca1 = grad_palettes[i][1];
+ var ramp = [];
+ for (var j = 0; j < grad_steps; j++) {
+  var t = j / (grad_steps - 1);
+  ramp.push(rrs.length);
+  rrs.push(Math.round((ca0 >> 16 & 255) + ((ca1 >> 16 & 255) - (ca0 >> 16 & 255)) * t));
+  ggs.push(Math.round((ca0 >> 8 & 255) + ((ca1 >> 8 & 255) - (ca0 >> 8 & 255)) * t));
+  bbs.push(Math.round((ca0 & 255) + ((ca1 & 255) - (ca0 & 255)) * t))
+ }
+ grad_ramps.push(ramp)
+}
 var ccs = [];
 var ccvs = [];
-var max_skin_cv = 64;
+var max_skin_cv = grad_skin_base + grad_palettes.length - 1;
 for (var i = 0; i < rrs.length; i++) {
  var rs = "00" + rrs[i].toString(16);
  var gs = "00" + ggs[i].toString(16);
@@ -3354,7 +2876,6 @@ var kd_r = false;
 var kd_u = false;
 var lkstm = 0;
 var oef = function() {
- if (whmos) hmos();
  var ctm = timeObj.now();
  vfr = (ctm - ltm) / 8;
  if (vfr > 5) vfr = 5;
@@ -3463,13 +2984,12 @@ var oef = function() {
    if (lb_fr != 1) {
     lb_fr += vfr * .01;
     if (lb_fr >= 1) lb_fr = 1;
-    lbh.style.opacity = lb_fr * .85;
-    lbs.style.opacity = lbn.style.opacity = lbp.style.opacity = lbf.style.opacity =lb_fr
+    lbh.style.opacity = lbf.style.opacity = lb_fr
    }
  } else if (ctm - dead_mtm > 1600) {
   if (login_iv == -1) {
    login_iv = -2;
-   login.style.display = "inline";
+   login.style.display = "";
    cskh.style.display =
     "inline";
    grqh.style.display = "inline"
@@ -3511,17 +3031,14 @@ var oef = function() {
    skodiv.style.opacity = login_fr;
    revdiv.style.opacity =
     login_fr;
-   mc.style.opacity = login_fr;
+   if (choosing_skin) mc.style.opacity = login_fr;
    loch.style.opacity = login_fr * mmal;
-   lbh.style.opacity = lb_fr * .85;
-   lbs.style.opacity = lbn.style.opacity = lbp.style.opacity = lbf.style.opacity = lb_fr
+   lbh.style.opacity = lbf.style.opacity = lb_fr
   }
  }
  if (want_end_world)
-  if (dead_mtm == -1) {
-   want_end_world = false;
-   resetGame()
-  }
+  if (dead_mtm == -1) endRound();
+ if (!world_running && !choosing_skin && !want_play && dead_mtm == -1 && animating) startDemo();
  if (world_running) {
   if (slither != null)
    if (kd_l_frb > 0 || kd_r_frb > 0)
@@ -3982,20 +3499,31 @@ var redraw = function() {
  var fd2, pd2;
  var lvx = view_xx;
  var lvy = view_yy;
- if (slither != null) {
-  if (fvtg > 0) {
-   fvtg--;
-   fvx = fvxs[fvpos];
-   fvy = fvys[fvpos];
-   fvxs[fvpos] = 0;
-   fvys[fvpos] = 0;
-   fvpos++;
-   if (fvpos >= vfc) fvpos = 0
+ if (slither == null && world_running) {
+  if (!demo_follow || demo_follow.dead) demo_follow = pickDemoFollow(view_xx, view_yy);
+  if (demo_follow) {
+   var dk = Math.min(1, .025 * avfr);
+   view_xx += (demo_follow.xx + demo_follow.fx - view_xx) * dk;
+   view_yy += (demo_follow.yy + demo_follow.fy - view_yy) * dk
   }
-  if (follow_view) {
-   view_xx =
-    slither.xx + slither.fx + fvx;
-   view_yy = slither.yy + slither.fy + fvy
+  gsc += (.85 - gsc) * Math.min(1, .02 * avfr)
+ }
+ if (slither != null || world_running) {
+  if (slither != null) {
+   if (fvtg > 0) {
+    fvtg--;
+    fvx = fvxs[fvpos];
+    fvy = fvys[fvpos];
+    fvxs[fvpos] = 0;
+    fvys[fvpos] = 0;
+    fvpos++;
+    if (fvpos >= vfc) fvpos = 0
+   }
+   if (follow_view) {
+    view_xx =
+     slither.xx + slither.fx + fvx;
+    view_yy = slither.yy + slither.fy + fvy
+   }
   }
   if (choosing_skin) {
    view_xx -= slither.pts.length * 5;
@@ -4024,17 +3552,8 @@ var redraw = function() {
  if (bgx2 < 0) bgx2 += 1;
  bgy2 %= 1;
  if (bgy2 < 0) bgy2 += 1;
- if (ggbg && (high_quality || gla > 0)) {
-  ctx.save();
-  ctx.fillStyle = "#000000";
-  ctx.fillRect(0, 0, mww, mhh);
-  ctx.globalAlpha = .3;
-  ctx.drawImage(gbgmc, 0, 0);
-  ctx.restore()
- } else {
-  ctx.fillStyle = "#000000";
-  ctx.fillRect(0, 0, mww, mhh)
- }
+ ctx.fillStyle = arena_base;
+ ctx.fillRect(0, 0, mww, mhh);
  if (bgp2) {
   ctx.save();
   ctx.fillStyle = bgp2;
@@ -4046,70 +3565,20 @@ var redraw = function() {
   ctx.fillRect(-mww * 3 / gsc, -mhh * 3 / gsc, mww * 5 / gsc, mhh * 5 / gsc);
   ctx.restore()
  }
- var ba = .8;
+ if (gbgmc && (high_quality || gla > 0)) ctx.drawImage(gbgmc, 0, 0);
  ctx.save();
  for (var i = foods_c - 1; i >= 0; i--) {
   var fo = foods[i];
-  if (fo.rx >= fpx1 && fo.ry >= fpy1 && fo.rx <= fpx2 && fo.ry <= fpy2)
-   if (fo.rad == 1) {
-    fx = mww2 + gsc * (fo.rx - view_xx) - fo.ofw2;
-    fy = mhh2 + gsc * (fo.ry - view_yy) - fo.ofh2;
-    ctx.globalAlpha = ba * fo.fr;
-    ctx.drawImage(fo.ofi, fx, fy)
-   } else {
-    fx = mww2 + gsc * (fo.rx - view_xx) - fo.ofw2 * fo.rad;
-    fy = mhh2 + gsc * (fo.ry - view_yy) - fo.ofh2 * fo.rad;
-    ctx.globalAlpha =
-     ba * fo.fr;
-    ctx.drawImage(fo.ofi, 0, 0, fo.ofw, fo.ofh, fx, fy, fo.ofw * fo.rad, fo.ofh * fo.rad)
-   }
+  if (fo.rx >= fpx1 && fo.ry >= fpy1 && fo.rx <= fpx2 && fo.ry <= fpy2) {
+   var frad = (2.2 + fo.sz * .62) * fo.rad * gsc * (1 + .07 * Math.sin(fo.gfr / 9));
+   if (frad < .4) continue;
+   fx = mww2 + gsc * (fo.rx - view_xx);
+   fy = mhh2 + gsc * (fo.ry - view_yy);
+   var ps = frad * pellet_scale;
+   ctx.globalAlpha = fo.fr;
+   ctx.drawImage(pelletSprite(fo.cv), fx - ps, fy - ps, ps * 2, ps * 2)
+  }
  }
- ctx.restore();
- ctx.save();
- ctx.globalCompositeOperation = "lighter";
- if (high_quality || gla > 0) {
-  var ba = 1;
-  if (gla != 1) ba = 1 * gla;
-  var ba2 = 1;
-  for (var i = foods_c - 1; i >= 0; i--) {
-   var fo = foods[i];
-   if (fo.rx >= fpx1 && fo.ry >= fpy1 && fo.rx <= fpx2 && fo.ry <= fpy2)
-    if (fo.rad == 1) {
-     fx = mww2 + gsc * (fo.rx - view_xx) - fo.fw2;
-     fy = mhh2 + gsc * (fo.ry - view_yy) - fo.fh2;
-     ctx.globalAlpha = ba2 * fo.fr;
-     ctx.drawImage(fo.fi, fx, fy);
-     ctx.globalAlpha = ba * (.5 + .5 * Math.cos(fo.gfr / 13)) * fo.fr;
-     ctx.drawImage(fo.fi,
-      fx, fy)
-    } else {
-     fx = mww2 + gsc * (fo.rx - view_xx) - fo.fw2 * fo.rad;
-     fy = mhh2 + gsc * (fo.ry - view_yy) - fo.fh2 * fo.rad;
-     ctx.globalAlpha = ba2 * fo.fr;
-     ctx.drawImage(fo.fi, 0, 0, fo.fw, fo.fh, fx, fy, fo.fw * fo.rad, fo.fh * fo.rad);
-     ctx.globalAlpha = ba * (.5 + .5 * Math.cos(fo.gfr / 13)) * fo.fr;
-     ctx.drawImage(fo.fi, 0, 0, fo.fw, fo.fh, fx, fy, fo.fw * fo.rad, fo.fh * fo.rad)
-    }
-  }
- } else
-  for (var i = foods_c - 1; i >= 0; i--) {
-   var fo = foods[i];
-   if (fo.rx >= fpx1 && fo.ry >= fpy1 && fo.rx <= fpx2 && fo.ry <= fpy2)
-    if (fo.rad == 1) {
-     fx = mww2 + gsc * (fo.rx - view_xx) - fo.fw2;
-     fy = mhh2 + gsc * (fo.ry - view_yy) - fo.fh2;
-     ctx.globalAlpha = fo.fr;
-     ctx.drawImage(fo.fi, fx, fy)
-    } else {
-     fx = mww2 + gsc * (fo.rx - view_xx) - fo.fw2 * fo.rad;
-     fy = mhh2 + gsc * (fo.ry - view_yy) - fo.fh2 * fo.rad;
-     ctx.globalAlpha = fo.fr;
-     ctx.drawImage(fo.fi, 0, 0, fo.fw, fo.fh, fx, fy, fo.fw * fo.rad, fo.fh * fo.rad)
-    }
-  }
- ctx.restore();
- ctx.save();
- ctx.globalCompositeOperation = "lighter";
  for (var i = preys.length - 1; i >= 0; i--) {
   pr = preys[i];
   tx = pr.xx + pr.fx;
@@ -4119,28 +3588,16 @@ var redraw = function() {
   if (px >= -50 && py >= -50 && px <= mwwp50 && py <= mhhp50) {
    if (pr.eaten) {
     var o = pr.eaten_by;
-    var k =
-     Math.pow(pr.eaten_fr, 2);
+    var k = Math.pow(pr.eaten_fr, 2);
     tx += (o.xx + o.fx + Math.cos(o.ang + o.fa) * (43 - k * 24) * (1 - k) - tx) * k;
     ty += (o.yy + o.fy + Math.sin(o.ang + o.fa) * (43 - k * 24) * (1 - k) - ty) * k;
     px = mww2 + gsc * (tx - view_xx);
     py = mhh2 + gsc * (ty - view_yy)
    }
-   if (pr.rad == 1) {
-    fx = px - pr.fw2;
-    fy = py - pr.fh2;
-    ctx.globalAlpha = .75 * pr.fr;
-    ctx.drawImage(pr.fi, fx, fy);
-    ctx.globalAlpha = .75 * (.5 + .5 * Math.cos(pr.gfr / 13)) * pr.fr;
-    ctx.drawImage(pr.fi, fx, fy)
-   } else {
-    fx = px - pr.fw2 * pr.rad;
-    fy = py - pr.fh2 * pr.rad;
-    ctx.globalAlpha = .75 * pr.fr;
-    ctx.drawImage(pr.fi, 0, 0, pr.fw, pr.fh, fx, fy, pr.fw * pr.rad, pr.fh * pr.rad);
-    ctx.globalAlpha = .75 * (.5 + .5 * Math.cos(pr.gfr / 13)) * pr.fr;
-    ctx.drawImage(pr.fi, 0, 0, pr.fw, pr.fh, fx, fy, pr.fw * pr.rad, pr.fh * pr.rad)
-   }
+   var prad = (3 + pr.sz * .8) * pr.rad * gsc * (1 + .1 * Math.cos(pr.gfr / 13));
+   var ps = prad * pellet_scale * 1.25;
+   ctx.globalAlpha = pr.fr;
+   ctx.drawImage(pelletSprite(pr.cv), px - ps, py - ps, ps * 2, ps * 2)
   }
  }
  ctx.restore();
@@ -4170,8 +3627,8 @@ var redraw = function() {
     ctx.save();
     ctx.globalAlpha =
      .5 * o.na * o.alive_amt * (1 - o.dead_amt);
-    ctx.font = "15px Arial, Helvetica Neue, Helvetica, sans-serif";
-    ctx.fillStyle = o.csw;
+    ctx.font = "600 14px Archivo, sans-serif";
+    ctx.fillStyle = "#e8ecf4";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     ntx = mww2 + (ntx - view_xx) * gsc;
@@ -4680,7 +4137,7 @@ var redraw = function() {
     var a = o.alive_amt * (1 - o.dead_amt);
     a *= a;
     m = 1;
-    if (o.tsp > o.fsp) {
+    if (o.tsp > o.fsp && !o.grad) {
      m = o.alive_amt * (1 - o.dead_amt) * Math.max(0, Math.min(1, (o.tsp - o.ssp) / (o.msp - o.ssp)));
      om = m * .37;
      mr = Math.pow(m, .5);
@@ -4705,7 +4162,7 @@ var redraw = function() {
         else d2 += oy - ty;
         d2 /= 6;
         if (d2 > 1) d2 = 1;
-        pci = per_color_imgs[rbcs[j % rbl]];
+        pci = per_color_imgs[rbcs[o.grad ? Math.floor(j * (rbl - 1) / Math.max(1, bp - 1)) : j % rbl]];
         kfmc = pci.kfmc;
         ctx.save();
         ctx.globalAlpha = d2 * a * mr * .38 * (.6 + .4 * Math.cos(j / dj - 1.15 * o.sfr));
@@ -4742,7 +4199,7 @@ var redraw = function() {
      m = 1 - m
     }
     var am = a * m;
-    if (high_quality || gla > 0) {
+    if (!o.grad && (high_quality || gla > 0)) {
      var oa = am;
      if (gla != 1) oa = am * gla;
      ctx.globalAlpha =
@@ -4800,7 +4257,8 @@ var redraw = function() {
     var kl = kmcs.length;
     var kl2 = kl * 2;
     var klp = opci.klp;
-    if (o.rbcs) {
+    if (o.grad) drawTube(ctx, o, bp, lsz, a);
+    else if (o.rbcs) {
      var rbcs = o.rbcs;
      var fdhc = o.fdhc;
      var fdtc = o.fdtc;
@@ -4851,7 +4309,7 @@ var redraw = function() {
          k = j % kl2;
          if (k >= kl) k = kl2 - (k + 1)
         } else k = j % kl;
-       pci = per_color_imgs[rbcs[j % rbl]];
+       pci = per_color_imgs[rbcs[o.grad ? Math.floor(j * (rbl - 1) / Math.max(1, bp - 1)) : j % rbl]];
        if (j < 4) {
         var tsz = lsz * (1 + (4 - j) * o.swell);
         ctx.drawImage(pci.kmcs[k], -gsc * tsz, -gsc * tsz, gsc * 2 * tsz, gsc * 2 * tsz)
@@ -4902,8 +4360,8 @@ var redraw = function() {
           } else k = j % kl;
          if (j < 4) {
           var tsz = glsz * (1 + (4 - j) * o.swell);
-          ctx.drawImage(per_color_imgs[rbcs[j % rbl]].kfmc, -gsc * tsz, -gsc * tsz, gsc * 2 * tsz, gsc * 2 * tsz)
-         } else ctx.drawImage(per_color_imgs[rbcs[j % rbl]].kfmc, -gsc * glsz, -gsc * glsz, gsc * 2 * glsz, gsc * 2 * glsz);
+          ctx.drawImage(per_color_imgs[rbcs[o.grad ? Math.floor(j * (rbl - 1) / Math.max(1, bp - 1)) : j % rbl]].kfmc, -gsc * tsz, -gsc * tsz, gsc * 2 * tsz, gsc * 2 * tsz)
+         } else ctx.drawImage(per_color_imgs[rbcs[o.grad ? Math.floor(j * (rbl - 1) / Math.max(1, bp - 1)) : j % rbl]].kfmc, -gsc * glsz, -gsc * glsz, gsc * 2 * glsz, gsc * 2 * glsz);
          ctx.restore()
         } ctx.restore()
       }
@@ -5160,7 +4618,7 @@ var redraw = function() {
       }
      } else if (o.antenna_shown) o.antenna_shown = false
     }
-    if (o.dead) {
+    if (o.dead && !o.grad) {
      ctx.save();
      ctx.globalCompositeOperation = "lighter";
      var falf = (.15 + .15 * Math.abs(Math.sin(5 * Math.PI * o.dead_amt))) * Math.sin(Math.PI * o.dead_amt);
@@ -5256,133 +4714,13 @@ var redraw = function() {
    }
   }
  }
- if (high_quality || gla > 0) {
-  ctx.save();
-  ctx.globalCompositeOperation = "lighter";
-  for (var i = foods_c - 1; i >= 0; i--) {
-   var fo = foods[i];
-   if (fo.rx >= fpx1 && fo.ry >= fpy1 && fo.rx <= fpx2 && fo.ry <= fpy2) {
-    tx = fo.rx - view_xx;
-    ty = fo.ry - view_yy;
-    fd2 = tx * tx + ty * ty;
-    fs = 1 + .06 * fo.rad;
-    fx = tx * fs;
-    fy = ty * fs;
-    fal = .005 + .09 * (1 - fd2 / (86E3 + fd2));
-    if (fo.rad != 1) fal *= Math.pow(fo.rad, .25);
-    if (gla != 1) fal *= gla;
-    fx = fx * gsc + mww2;
-    fy = fy * gsc + mhh2;
-    if (fo.rad == 1) {
-     fx -= fo.gfw2;
-     fy -= fo.gfh2;
-     ctx.globalAlpha = fal * fo.fr;
-     ctx.drawImage(fo.gfi, fx, fy);
-     ctx.globalAlpha = fal * (.5 + .5 * Math.cos(fo.gfr / 13)) * fo.fr;
-     ctx.drawImage(fo.gfi, fx, fy)
-    } else {
-     fx -= fo.gfw2 * fo.rad;
-     fy -= fo.gfh2 * fo.rad;
-     ctx.globalAlpha = fal * fo.fr;
-     ctx.drawImage(fo.gfi, 0, 0, fo.gfw, fo.gfh, fx, fy, fo.gfw * fo.rad, fo.gfh * fo.rad);
-     ctx.globalAlpha = fal * (.5 + .5 * Math.cos(fo.gfr / 13)) * fo.fr;
-     ctx.drawImage(fo.gfi, 0, 0, fo.gfw, fo.gfh, fx, fy, fo.gfw * fo.rad, fo.gfh * fo.rad)
-    }
-    fs = 1 + .32 * fo.rad;
-    fx = tx * fs;
-    fy = ty * fs;
-    fal = .085 *
-     (1 - fd2 / (16500 + fd2));
-    if (fo.rad != 1) fal *= Math.pow(fo.rad, .25);
-    if (gla != 1) fal *= gla;
-    fx = fx * gsc + mww2;
-    fy = fy * gsc + mhh2;
-    if (fo.rad == 1) {
-     fx -= fo.g2fw2;
-     fy -= fo.g2fh2;
-     ctx.globalAlpha = fal * fo.fr;
-     ctx.drawImage(fo.g2fi, fx, fy);
-     ctx.globalAlpha = fal * (.5 + .5 * Math.cos(fo.gfr / 13)) * fo.fr;
-     ctx.drawImage(fo.g2fi, fx, fy)
-    } else {
-     fx -= fo.g2fw2 * fo.rad;
-     fy -= fo.g2fh2 * fo.rad;
-     ctx.globalAlpha = fal * fo.fr;
-     ctx.drawImage(fo.g2fi, 0, 0, fo.g2fw, fo.g2fh, fx, fy, fo.g2fw * fo.rad, fo.g2fh * fo.rad);
-     ctx.globalAlpha = fal * (.5 + .5 * Math.cos(fo.gfr / 13)) * fo.fr;
-     ctx.drawImage(fo.g2fi,
-      0, 0, fo.g2fw, fo.g2fh, fx, fy, fo.g2fw * fo.rad, fo.g2fh * fo.rad)
-    }
-   }
-  }
-  ctx.restore()
- }
- ctx.save();
- ctx.globalCompositeOperation = "lighter";
- for (var i = preys.length - 1; i >= 0; i--) {
-  pr = preys[i];
-  tx = pr.xx + pr.fx;
-  ty = pr.yy + pr.fy;
-  if (pr.eaten) {
-   var o = pr.eaten_by;
-   var k = Math.pow(pr.eaten_fr, 2);
-   tx += (o.xx + o.fx + Math.cos(o.ang + o.fa) * (43 - k * 24) * (1 - k) - tx) * k;
-   ty += (o.yy + o.fy + Math.sin(o.ang + o.fa) * (43 - k * 24) * (1 - k) - ty) * k
-  }
-  tx -= view_xx;
-  ty -= view_yy;
-  pd2 = tx * tx + ty * ty;
-  fs = 1 + .08 * pr.rad;
-  px = tx * fs;
-  py = ty * fs;
-  pal = .4 * (1 - pd2 / (176E3 + pd2));
-  if (pr.rad != 1) pal *= Math.pow(pr.rad,
-   .25);
-  px = px * gsc + mww2;
-  py = py * gsc + mhh2;
-  if (pr.rad == 1) {
-   if (px >= -150 && py >= -150 && px <= mwwp150 && py <= mhhp150) {
-    px -= pr.gfw2;
-    py -= pr.gfh2;
-    ctx.globalAlpha = pal * pr.fr;
-    ctx.drawImage(pr.gfi, px, py);
-    ctx.globalAlpha = pal * (.5 + .5 * Math.cos(pr.gfr / 13)) * pr.fr;
-    ctx.drawImage(pr.gfi, px, py)
-   }
-  } else if (px >= -150 && py >= -150 && px <= mwwp150 && py <= mhhp150) {
-   px -= pr.gfw2 * pr.rad;
-   py -= pr.gfh2 * pr.rad;
-   ctx.globalAlpha = pal * pr.fr;
-   ctx.drawImage(pr.gfi, 0, 0, pr.gfw, pr.gfh, px, py, pr.gfw * pr.rad, pr.gfh * pr.rad);
-   ctx.globalAlpha = pal * (.5 + .5 * Math.cos(pr.gfr / 13)) * pr.fr;
-   ctx.drawImage(pr.gfi, 0, 0, pr.gfw, pr.gfh, px, py, pr.gfw * pr.rad, pr.gfh * pr.rad)
-  }
-  fs = 1 + .32 * pr.rad;
-  px = tx * fs;
-  py = ty * fs;
-  pal = .35 * (1 - pd2 / (46500 + pd2));
-  if (pr.rad != 1) pal *= Math.pow(pr.rad, .25);
-  trd = pr.rad * 2;
-  px = px * gsc + mww2;
-  py = py * gsc + mhh2;
-  if (px >= -150 && py >= -150 && px <= mwwp150 && py <= mhhp150) {
-   px -= pr.gfw2 * trd;
-   py -= pr.gfh2 * trd;
-   ctx.globalAlpha = pal * pr.fr;
-   ctx.drawImage(pr.gfi, 0, 0, pr.gfw, pr.gfh, px, py, pr.gfw * trd, pr.gfh * trd);
-   ctx.globalAlpha = pal * (.5 + .5 * Math.cos(pr.gfr / 13)) * pr.fr;
-   ctx.drawImage(pr.gfi, 0, 0, pr.gfw, pr.gfh, px, py, pr.gfw * trd,
-    pr.gfh * trd)
-  }
- }
- ctx.restore();
  if (!choosing_skin)
   if (Math.abs(flux_grd - view_dist) < 4E3) {
    ctx.save();
-   ctx.lineWidth = 23 * gsc;
-   ctx.strokeStyle = "#800000";
-   ctx.fillStyle = "#300000";
-   ctx.globalAlpha = .8;
+   ctx.lineWidth = 10 * gsc;
+   ctx.strokeStyle = "rgba(255, 79, 106, .75)";
+   ctx.fillStyle = "#0b1018";
+   ctx.globalAlpha = 1;
    for (i = 1; i <= 2; i++) {
     ctx.beginPath();
     k = flux_grd;
@@ -5414,9 +4752,9 @@ var redraw = function() {
     if (playing) {
      wumsts = false;
      var f_htm = "";
-     var yl = "Your length";
+     var yl = "Length";
      var ofstr = "of";
-     var rstr = "Your rank";
+     var rstr = "Rank";
      if (lang == "de") {
       yl = "Deine Länge";
       ofstr = "von";
@@ -5436,12 +4774,111 @@ var redraw = function() {
      }
      var sct = slither.sct + slither.rsc;
      var score = Math.floor((fpsls[sct] + slither.fam / fmlts[sct] - 1) * 15 - 5) / 1;
-     f_htm += '<span style="font-size: 14px;"><span style="opacity: .4;">' +
-      yl + ': </span><span style="opacity: .8; font-weight: bold;">' + score + "</span></span>";
-     f_htm += '<BR><span style="opacity: .3;">' + rstr + ': </span><span style="opacity: .35;">' + rank + '</span><span style="opacity: .3;"> ' + ofstr + ' </span><span style="opacity: .35;">' + slither_count + "</span>";
+     f_htm += '<div class="lbl">' + yl + '</div><div class="val">' + score + '</div><div class="rank">' + rstr + " <b>" + rank + "</b> " + ofstr + " " + slither_count + "</div>";
      lbf.innerHTML = f_htm
     } ctx.restore()
 };
+
+var pellet_px = 64;
+var pellet_body = 22;
+var pellet_scale = (pellet_px / 2) / pellet_body;
+var pellet_cache = [];
+
+function pelletSprite(cv) {
+ if (pellet_cache[cv]) return pellet_cache[cv];
+ var c = document.createElement("canvas");
+ c.width = c.height = pellet_px;
+ var ctx = c.getContext("2d");
+ var m = pellet_px / 2;
+ var rr = rrs[cv],
+  gg = ggs[cv],
+  bb = bbs[cv];
+ var col = function(k, a) {
+  var r = k >= 0 ? rr + (255 - rr) * k : rr * (1 + k);
+  var g = k >= 0 ? gg + (255 - gg) * k : gg * (1 + k);
+  var b = k >= 0 ? bb + (255 - bb) * k : bb * (1 + k);
+  return "rgba(" + Math.round(r) + "," + Math.round(g) + "," + Math.round(b) + "," + a + ")"
+ };
+ var glow = ctx.createRadialGradient(m, m, pellet_body * .6, m, m, m);
+ glow.addColorStop(0, col(0, .35));
+ glow.addColorStop(1, col(0, 0));
+ ctx.fillStyle = glow;
+ ctx.fillRect(0, 0, pellet_px, pellet_px);
+ var body = ctx.createRadialGradient(m - pellet_body * .32, m - pellet_body * .36, 0, m, m, pellet_body);
+ body.addColorStop(0, col(.55, 1));
+ body.addColorStop(.45, col(.12, 1));
+ body.addColorStop(.85, col(0, 1));
+ body.addColorStop(1, col(-.18, 1));
+ ctx.fillStyle = body;
+ ctx.beginPath();
+ ctx.arc(m, m, pellet_body, 0, pi2);
+ ctx.fill();
+ pellet_cache[cv] = c;
+ return c
+}
+
+function tubePath(ctx, i0, i1) {
+ ctx.beginPath();
+ ctx.moveTo((pbx[i0] - view_xx) * gsc, (pby[i0] - view_yy) * gsc);
+ for (var i = i0 + 1; i <= i1; i++) ctx.lineTo((pbx[i] - view_xx) * gsc, (pby[i] - view_yy) * gsc)
+}
+
+function drawTube(ctx, o, bp, lsz, a) {
+ if (bp < 1) return;
+ var last = bp - 1;
+ var r = lsz * gsc;
+ var c0 = o.gc0;
+ var c1 = o.gc1;
+ var r0 = c0 >> 16 & 255,
+  g0 = c0 >> 8 & 255,
+  b0 = c0 & 255;
+ var r1 = c1 >> 16 & 255,
+  g1 = c1 >> 8 & 255,
+  b1 = c1 & 255;
+ ctx.save();
+ ctx.lineCap = "round";
+ ctx.lineJoin = "round";
+ ctx.globalAlpha = a;
+ ctx.save();
+ ctx.translate(0, r * .4);
+ ctx.strokeStyle = "rgba(0, 0, 0, .28)";
+ ctx.lineWidth = r * 2.15;
+ tubePath(ctx, 0, last);
+ ctx.stroke();
+ ctx.restore();
+ if (o.tsp > o.fsp) {
+  var bm = o.alive_amt * (1 - o.dead_amt) * Math.max(0, Math.min(1, (o.tsp - o.ssp) / (o.msp - o.ssp)));
+  ctx.globalAlpha = a * bm * (.22 + .1 * Math.sin(o.sfr * 2.2));
+  ctx.strokeStyle = "rgb(" + r0 + "," + g0 + "," + b0 + ")";
+  ctx.lineWidth = r * 3.4;
+  tubePath(ctx, 0, last);
+  ctx.stroke();
+  ctx.globalAlpha = a
+ }
+ ctx.strokeStyle = "rgba(6, 9, 15, .55)";
+ ctx.lineWidth = r * 2 + Math.max(2, r * .2);
+ tubePath(ctx, 0, last);
+ ctx.stroke();
+ ctx.lineWidth = r * 2;
+ if (last == 0) {
+  ctx.fillStyle = "rgb(" + r0 + "," + g0 + "," + b0 + ")";
+  ctx.beginPath();
+  ctx.arc((pbx[0] - view_xx) * gsc, (pby[0] - view_yy) * gsc, r, 0, pi2);
+  ctx.fill()
+ } else {
+  var nb = Math.max(1, Math.min(56, last));
+  for (var b = nb - 1; b >= 0; b--) {
+   var i0 = Math.floor(b * last / nb);
+   var i1 = Math.floor((b + 1) * last / nb);
+   if (i1 <= i0) continue;
+   var t = (i0 + i1) / 2 / last;
+   ctx.strokeStyle = "rgb(" + Math.round(r0 + (r1 - r0) * t) + "," + Math.round(g0 + (g1 - g0) * t) + "," + Math.round(b0 + (b1 - b0) * t) + ")";
+   tubePath(ctx, i0, i1);
+   ctx.stroke()
+  }
+ }
+ ctx.restore()
+}
 
 function drawEyes(o, ctx, fang, ssc, a, a2) {
  var ed = o.ed * ssc;
@@ -5498,11 +4935,6 @@ function drawEyes(o, ctx, fang, ssc, a, a2) {
  ctx.fill()
 }
 
-function reposLbf() {
- lbf.style.bottom = 4 + "px";
- lbf.style.height = "37px"
-}
-
 function reposBskbtns() {
  if (bskbtns.length > 0)
   for (var i = bskbtns.length - 1; i >= 0; i--) {
@@ -5524,21 +4956,18 @@ function resize() {
  if (ww != lww || hh != lhh) {
   lww = ww;
   lhh = hh;
-  loch.style.bottom = "16px";
-  reposLbf();
-  lbh.style.right = "4px";
-  lbs.style.right = "4px";
-  lbn.style.right = "64px";
-  lbp.style.right = lb_w + 64 + 16 + "px";
-  loch.style.right = "16px";
-  login.style.width = ww + "px";
-  grqh.style.right = "20px";
-  grqh.style.top = "16px";
-  pskh.style.left = Math.round(ww * .25 - 44) + "px";
-  nskh.style.left = Math.round(ww * .75 - 44) + "px";
+  pskh.style.left = Math.round(ww * (ww < 640 ? .14 : .25) - 36) + "px";
+  nskh.style.left = Math.round(ww * (ww < 640 ? .86 : .75) - 36) + "px";
   reposSkinStuff();
-  pskh.style.top = Math.round(hh / 2 - 44) + "px";
-  nskh.style.top = Math.round(hh / 2 - 44) + "px";
+  pskh.style.top = Math.round(hh / 2 - 36) + "px";
+  nskh.style.top = Math.round(hh / 2 - 36) + "px";
+  var lsc = Math.min(1, (ww - 32) / 450, Math.max(.55, (hh - 330) / 300));
+  logo.style.width = Math.round(450 * lsc) + "px";
+  logo.style.height = Math.round(135 * lsc) + "px";
+  if (lmch) {
+   trfo(lmch, "0% 0%");
+   trf(lmch, "scale(" + lsc + "," + lsc + ")")
+  }
   reposBskbtns();
   var wdl = 1800;
   var dl = Math.sqrt(ww * ww + hh * hh);
@@ -5551,17 +4980,6 @@ function resize() {
   if (nmhh > 1500) {
    nmww = Math.ceil(nmww * 1500 / nmhh);
    nmhh = 1500
-  }
-  if (hh < 560) lgbsc = Math.max(50, hh) / 560;
-  else lgbsc = 1;
-  var sc = Math.round(lgbsc * lgcsc * 1E5) / 1E5;
-  if (sc == 1) {
-   trf(login, "");
-   login.style.top = "0px"
-  } else {
-   var lgt = Math.round(hh * (1 - lgbsc) * 1E5) / 1E5;
-   login.style.top = -lgt + "px";
-   trf(login, "scale(" + sc + "," + sc + ")")
   }
   if (mww != nmww || mhh != nmhh) {
    mww = nmww;
@@ -6025,7 +5443,42 @@ function dropFood(xx, yy, val, cv) {
   xx = grd + dx * (world_radius - 30) / d;
   yy = grd + dy * (world_radius - 30) / d
  }
- spawnFood(xx, yy, sz, cv % 9, true, val, false)
+ spawnFood(xx, yy, sz, foodColorFor(cv), true, val, false)
+}
+
+var food_color_cache = [];
+
+function foodColorFor(cv) {
+ if (cv < 9) return cv;
+ if (food_color_cache[cv] !== undefined) return food_color_cache[cv];
+ var best = 0;
+ var bd = 1E9;
+ for (var i = 0; i < 9; i++) {
+  var dr = rrs[i] - rrs[cv];
+  var dg = ggs[i] - ggs[cv];
+  var db = bbs[i] - bbs[cv];
+  var d = dr * dr + dg * dg + db * db;
+  if (d < bd) {
+   bd = d;
+   best = i
+  }
+ }
+ food_color_cache[cv] = best;
+ return best
+}
+
+function randomGradientSkin() {
+ return grad_skin_base + Math.floor(Math.random() * grad_ramps.length)
+}
+
+function storedSkin() {
+ var cv = -1;
+ try {
+  var mcv = localStorage.snakercv;
+  if (mcv == "" + Number(mcv)) cv = Number(mcv)
+ } catch (e) {}
+ if (cv < grad_skin_base || cv > max_skin_cv) cv = randomGradientSkin();
+ return cv
 }
 
 function killSnake(o, killer) {
@@ -6319,8 +5772,8 @@ function spawnBot(sct, avoid_player) {
   }
   if (!ok && tries < 29) continue;
   var ang = Math.atan2(grd - p.yy, grd - p.xx) + (Math.random() - .5) * 2;
-  var cv = Math.floor(Math.random() * (max_skin_cv + 1));
-  var nk = bot_names[Math.floor(Math.random() * bot_names.length)];
+  var cv = randomGradientSkin();
+  var nk = pickBotName();
   var o = spawnSnake(p.xx, p.yy, ang, sct, cv, nk, null);
   o.bot = true;
   o.aggr = Math.random() * Math.random();
@@ -6332,6 +5785,17 @@ function spawnBot(sct, avoid_player) {
   return o
  }
  return null
+}
+
+function pickBotName() {
+ var used = {};
+ for (var i = slithers.length - 1; i >= 0; i--)
+  if (!slithers[i].dead) used[slithers[i].nk] = true;
+ var free = [];
+ for (var i = 0; i < bot_names.length; i++)
+  if (!used[bot_names[i]]) free.push(bot_names[i]);
+ if (free.length == 0) return bot_names[Math.floor(Math.random() * bot_names.length)];
+ return free[Math.floor(Math.random() * free.length)]
 }
 
 function randomBotLength() {
@@ -6443,8 +5907,9 @@ function updateLeaderboard() {
   var o = slithers[i];
   if (!o.dead) list.push(o)
  }
+ for (var i = list.length - 1; i >= 0; i--) list[i].lbs = snakeScore(list[i]);
  list.sort(function(a, b) {
-  return b.ms - a.ms
+  return b.lbs - a.lbs
  });
  slither_count = list.length;
  if (slither_count > biggest_slither_count) biggest_slither_count = slither_count;
@@ -6453,27 +5918,28 @@ function updateLeaderboard() {
   if (rank < best_rank) best_rank = rank
  }
  if (lb_fr == -1)
-  if (dead_mtm == -1) lb_fr = 0;
- var s_htm = "";
- var n_htm = "";
- var p_htm = "";
+  if (dead_mtm == -1 && playing) lb_fr = 0;
+ if (!playing) return;
+ var htm = "";
  var n = Math.min(10, list.length);
- for (var i = 0; i < n; i++) {
+ for (var i = 0; i < list.length; i++) {
   var o = list[i];
   var me = o == slither;
-  var nk = me ? my_nick : o.nk;
-  if (!gdnm(nk)) nk = "";
-  nk = nk.split("&").join("&amp;").split("<").join("&lt;").split(">").join("&gt;").split(" ").join("&nbsp;");
-  var k = me ? 1 : .7 * (.3 + .7 * (1 - (i + 1) / 10));
-  var cs = per_color_imgs[o.cv % 9].cs;
-  s_htm += '<span style="opacity:' + k + "; color:" + cs + ';">' + snakeScore(o) + "</span><BR>";
-  n_htm += '<span style="opacity:' + k + "; color:" + cs + ";" + (me ? "font-weight:bold;" : "") + '">' + nk + "</span><BR>";
-  p_htm += '<span style="opacity:' + k + "; color:" + cs + ';">#' + (i + 1) + "</span><BR>"
+  if (i >= n && !me) continue;
+  if (i >= n) htm += '<li class="gap" aria-hidden="true"></li>';
+  htm += leaderboardRow(o, i + 1, me);
+  if (i >= n) break
  }
- lbs.innerHTML = s_htm;
- lbn.innerHTML = n_htm;
- lbp.innerHTML = p_htm;
+ lbn.innerHTML = htm;
  wumsts = true
+}
+
+function leaderboardRow(o, pos, me) {
+ var nk = me ? my_nick : o.nk;
+ if (!gdnm(nk)) nk = "";
+ if (nk.length == 0) nk = me ? "You" : "Unnamed";
+ nk = nk.split("&").join("&amp;").split("<").join("&lt;").split(">").join("&gt;");
+ return '<li class="' + (me ? "me" : "") + '"><span class="pos">' + pos + '</span><span class="nm">' + nk + '</span><span class="sc">' + snakeScore(o) + "</span></li>"
 }
 
 function updateMinimap() {
@@ -6487,7 +5953,7 @@ function updateMinimap() {
  asmc2.style.opacity = 0;
  var ctx = asmc2.getContext("2d");
  ctx.clearRect(0, 0, mmsz, mmsz);
- ctx.fillStyle = "#FFFFFF";
+ ctx.fillStyle = "#8e9ab4";
  for (var i = slithers.length - 1; i >= 0; i--) {
   var o = slithers[i];
   if (o.dead || o == slither) continue;
@@ -6581,9 +6047,10 @@ function stepWorld(vfr) {
  }
 }
 
-function startGame() {
+var demo_follow = null;
+
+function initWorld() {
  resetGame();
- want_play = false;
  grd = world_radius + 400;
  flux_grd = world_radius;
  cst = .43;
@@ -6605,47 +6072,108 @@ function startGame() {
  food_cleanup_mtm = 0;
  while (food_natural < food_target) spawnNaturalFoodCluster();
  for (var i = 0; i < prey_target; i++) spawnPrey();
+ for (var i = 0; i < bot_count; i++) spawnBot(randomBotLength(), false);
+ world_running = true;
+ var p = randomWorldPoint(world_radius * .5);
+ view_xx = p.xx;
+ view_yy = p.yy;
+ demo_follow = pickDemoFollow(view_xx, view_yy)
+}
+
+function startDemo() {
+ initWorld();
+ gsc = .9;
+ mc.style.opacity = 1;
+ mc.style.display = "inline";
+ bgi2.width = bgw2;
+ bgi2.height = bgh2;
+ bgi2.getContext("2d").drawImage(bg_hex, 0, 0);
+ bgp2 = bgi2.getContext("2d").createPattern(bgi2, "repeat");
+ resize()
+}
+
+function pickDemoFollow(xx, yy) {
+ var best = null;
+ var bs = -1E9;
+ for (var i = slithers.length - 1; i >= 0; i--) {
+  var o = slithers[i];
+  if (o.dead || o == slither) continue;
+  var dx = o.xx - xx;
+  var dy = o.yy - yy;
+  var s = Math.min(o.sct, 40) * 40 - Math.sqrt(dx * dx + dy * dy);
+  if (s > bs) {
+   bs = s;
+   best = o
+  }
+ }
+ return best
+}
+
+function findSpawnPoint(xx, yy) {
+ for (var tries = 0; tries < 40; tries++) {
+  var a = Math.random() * pi2;
+  var r = tries < 25 ? 250 + Math.random() * 700 : Math.random() * world_radius * .7;
+  var px = tries < 25 ? xx + Math.cos(a) * r : grd + Math.cos(a) * r;
+  var py = tries < 25 ? yy + Math.sin(a) * r : grd + Math.sin(a) * r;
+  var dcx = px - grd;
+  var dcy = py - grd;
+  if (dcx * dcx + dcy * dcy > Math.pow(world_radius - 500, 2)) continue;
+  var ok = true;
+  for (var i = slithers.length - 1; i >= 0 && ok; i--) {
+   var o = slithers[i];
+   if (o.dead) continue;
+   for (var j = o.pts.length - 1; j >= 0; j -= 2) {
+    var dx = o.pts[j].xx - px;
+    var dy = o.pts[j].yy - py;
+    if (dx * dx + dy * dy < 320 * 320) {
+     ok = false;
+     break
+    }
+   }
+  }
+  if (ok) return {
+   xx: px,
+   yy: py
+  }
+ }
+ return randomWorldPoint(world_radius * .6)
+}
+
+function startGame() {
+ want_play = false;
+ if (!world_running) initWorld();
+ rank = 0;
+ best_rank = 999999999;
+ for (j = vfc - 1; j >= 0; j--) {
+  fvxs[j] = 0;
+  fvys[j] = 0
+ }
+ fvtg = 0;
+ fvx = 0;
+ fvy = 0;
+ mmal = 0;
+ mmgad = false;
+ asmc.getContext("2d").clearRect(0, 0, mmsz, mmsz);
+ asmc2.getContext("2d").clearRect(0, 0, mmsz, mmsz);
  var s = asciize(nick.value);
  if (s.length > 24) s = s.substr(0, 24);
  my_nick = s;
- var cv = Math.floor(Math.random() * 9);
- try {
-  var mcv = localStorage.snakercv;
-  if (mcv == "" + Number(mcv)) cv = Number(mcv)
- } catch (e) {}
+ var cv = storedSkin();
  var ca = null;
- try {
-  if (localStorage.want_custom_skin == "1") {
-   var taa = localStorage.custom_skin;
-   if (taa && taa.length > 0) {
-    taa = ("" + taa).split(",");
-    ca = new Uint8Array(taa.length);
-    for (var i = 0; i < taa.length; i++) ca[i] = Number(taa[i])
-   }
-  }
- } catch (e) {}
- var p = randomWorldPoint(world_radius * .6);
- var ang = Math.random() * pi2;
+ var p = findSpawnPoint(view_xx, view_yy);
+ var ang = Math.atan2(grd - p.yy, grd - p.xx) + (Math.random() - .5) * 1.5;
  slither = spawnSnake(p.xx, p.yy, ang, 2, cv, my_nick, ca);
  slither.md = false;
  slither.wmd = false;
- view_xx = p.xx;
- view_yy = p.yy;
  lsxm = xm;
  lsym = ym;
- for (var i = 0; i < bot_count; i++) spawnBot(randomBotLength(), true);
- world_running = true;
+ demo_follow = null;
  playing = true;
- lbf.style.left = "8px";
  mmsta = .475;
- reposLbf();
  setMinimapSize(80, true);
- lbh.style.display = "inline";
- lbs.style.display = "inline";
- lbn.style.display = "inline";
- lbp.style.display = "inline";
- lbf.style.display = "inline";
- loch.style.display = "inline";
+ lbh.style.display = "block";
+ lbf.style.display = "block";
+ loch.style.display = "block";
  high_quality = true;
  gla = 1;
  wdfg = 0;
@@ -6659,8 +6187,19 @@ function startGame() {
   high_quality = false;
   gla = 0
  }
+ lb_mtm = 0;
  updateLeaderboard();
  startShowGame()
+}
+
+function endRound() {
+ want_end_world = false;
+ playing = false;
+ if (slither) demo_follow = pickDemoFollow(slither.xx, slither.yy);
+ slither = null;
+ lbh.style.display = "none";
+ lbf.style.display = "none";
+ loch.style.display = "none"
 }
 
 function resetGame() {
@@ -6716,7 +6255,7 @@ function gameOver() {
   var pstr = "Play Again";
   if (lang == "fr") pstr = "Jouer";
   else if (lang == "pt") pstr = "Joga";
-  play_btn.setText(String.fromCharCode(160) + pstr + String.fromCharCode(160));
+  play_btn.setText(pstr);
   want_end_world = true
  }
 }
@@ -6751,26 +6290,20 @@ var bskh = document.getElementById("bskh");
 var want_quality = 1;
 var grqi = document.getElementById("grqi");
 try {
- if (localStorage.qual == "0") {
-  grqi.src = "img/ui/low-quality.png";
-  want_quality = 0
- } else {
-  phqi.src = "img/ui/low-quality.png";
-  want_quality = 1
- }
+ if (localStorage.qual == "0") want_quality = 0
 } catch (e) {}
+
+function showQuality() {
+ grqi.textContent = want_quality == 1 ? "High quality" : "Low quality";
+ grq.setAttribute("aria-pressed", want_quality == 1 ? "true" : "false")
+}
+showQuality();
 grq.onclick = function() {
+ want_quality = want_quality == 1 ? 0 : 1;
  try {
-  if (localStorage.qual == "0") {
-   localStorage.qual = "1";
-   grqi.src = "img/ui/high-quality.png";
-   want_quality = 1
-  } else {
-   localStorage.qual = "0";
-   grqi.src = "img/ui/low-quality.png";
-   want_quality = 0
-  }
+  localStorage.qual = "" + want_quality
  } catch (e) {}
+ showQuality();
  return false
 };
 cskh.style.display = "inline";
@@ -6790,9 +6323,8 @@ psk.onclick = function() {
  if (building_skin) return false;
  if (playing)
   if (slither != null) {
-   var cv = slither.rcv;
-   cv--;
-   if (cv < 0) cv = max_skin_cv;
+   var cv = slither.rcv - 1;
+   if (cv < grad_skin_base) cv = max_skin_cv;
    setSkin(slither, cv, null);
    try {
     localStorage.want_custom_skin = "0"
@@ -6803,9 +6335,8 @@ nsk.onclick = function() {
  if (building_skin) return false;
  if (playing)
   if (slither != null) {
-   var cv = slither.rcv;
-   cv++;
-   if (cv > max_skin_cv) cv = 0;
+   var cv = slither.rcv + 1;
+   if (cv > max_skin_cv || cv < grad_skin_base) cv = grad_skin_base;
    setSkin(slither, cv, null);
    try {
     localStorage.want_custom_skin = "0"
@@ -6834,7 +6365,6 @@ csk.onclick = function() {
    revdiv.style.opacity = 0;
    pskh.style.display = "inline";
    nskh.style.display = "inline";
-   bskh.style.display = "inline";
    skodiv.style.display = "inline";
    revdiv.style.display = "none";
    reposSkinStuff();
@@ -6867,26 +6397,9 @@ csk.onclick = function() {
     po.eby = 0;
     pts.push(po)
    }
-   var cv = 0;
-   try {
-    var mcv = localStorage.snakercv;
-    if (mcv == "" + Number(mcv)) cv = Number(mcv)
-   } catch (e) {}
+   var cv = storedSkin();
    var aa = null;
-   var wca = false;
-   var taa = "";
-   try {
-    wca = localStorage.want_custom_skin == "1";
-    taa = localStorage.custom_skin
-   } catch (e) {}
-   if (wca)
-    if (taa)
-     if (taa.length >
-      0) {
-      taa = ("" + taa).split(",");
-      aa = new Uint8Array(taa.length);
-      for (var i = 0; i < taa.length; i++) aa[i] = Number(taa[i])
-     } var o = newSlither(1, grd / 2, grd / 2, cv, 0, pts, default_msl, aa);
+   var o = newSlither(1, grd / 2, grd / 2, cv, 0, pts, default_msl, aa);
    view_xx = grd / 2 - (22 / 2 - .5) * 10;
    view_yy = grd / 2;
    slither = o;
@@ -6915,9 +6428,6 @@ csk.onclick = function() {
    qsm = 1;
    startShowGame();
    lbh.style.display = "none";
-   lbs.style.display = "none";
-   lbn.style.display = "none";
-   lbp.style.display = "none";
    lbf.style.display = "none";
    loch.style.display = "none"
   } return false
@@ -7228,15 +6738,14 @@ function showLogo(done) {
     } if (!r) r = 1;
    lctx.beginPath();
    if (i < 9) {
-    var gd = ctx.createLinearGradient(0,
-     70 * lgsc, 0, 230 * lgsc);
-    gd.addColorStop(0, "#80FFA0");
-    gd.addColorStop(1, "#008040");
+    var gd = lctx.createLinearGradient(20 * lgsc, 0, 330 * lgsc, 0);
+    gd.addColorStop(0, "#f4f6fa");
+    gd.addColorStop(1, "#f4f6fa");
     lctx.fillStyle = gd
    } else {
-    var gd = ctx.createLinearGradient(0, 50 * lgsc, 0, 265 * lgsc);
-    gd.addColorStop(0, "#9850FF");
-    gd.addColorStop(1, "#281060");
+    var gd = lctx.createLinearGradient(330 * lgsc, 0, 440 * lgsc, 0);
+    gd.addColorStop(0, "#5d6880");
+    gd.addColorStop(1, "#5d6880");
     lctx.fillStyle = gd
    }
    dmv = false;
@@ -7293,7 +6802,7 @@ function showLogo(done) {
    }
   }
   lctx2.clearRect(0, 0, lw, lh);
-  lctx2.shadowColor = "#000000";
+  lctx2.shadowColor = "rgba(0, 0, 0, .55)";
   lctx2.shadowBlur = 16;
   lctx2.shadowOffsetY = 7;
   lctx2.drawImage(lmc, 0, 0)

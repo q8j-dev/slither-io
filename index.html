@@ -1,60 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
  <head>
   <meta charset="utf-8">
   <title>slither</title>
-  <meta name="viewport" content="minimal-ui, user-scalable=no, initial-scale=0.7, maximum-scale=0.7, width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#131a26">
   <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preload" href="fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
  </head>
  <body>
 
-  <div id="login" style="position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 20; margin-top: 64px;">
-   <div id="logo" style="margin-left: auto; margin-right: auto; text-align: center; width: 450px; height: 115px; margin-top: 50px;"></div>
-
-   <div id="lastscore" style="margin-left: auto; margin-right: auto; text-align: center; margin-top: 44px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif; font-size: 15px; color: #FFFFFF;">&nbsp;</div>
-
-   <div id="tips" class="nsi" style="margin-left: auto; margin-right: auto; width: 360px; height: 30px; color: #8068C0; text-align: center; font-size: 14px; font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif; opacity: 0;">&nbsp;</div>
-
-   <div style="margin-left: auto; margin-right: auto; text-align: center;">
-    <div class="taho" id="nick_holder" style="width: 244px; margin-top: 34px; background: #4C447c; box-shadow: 0px 6px 50px rgba(0,0,0,1); opacity: 0;">
-     <input class="sumsginp" id="nick" style="width: 220px; height: 24px;" placeholder="Nickname" maxlength="24">
+  <div id="login">
+   <div class="login-stack">
+    <div id="logo"></div>
+    <div id="lastscore"></div>
+    <div id="nick_holder">
+     <label for="nick" class="sr-only">Nickname</label>
+     <input id="nick" placeholder="Nickname" maxlength="24" spellcheck="false" autocomplete="off">
     </div>
-   </div>
-
-   <div id="playh" style="margin-left: auto; margin-right: auto; text-align: center;"></div>
-  </div>
-
-  <div id="smh" style="opacity: 0; position: fixed; left: 0px; top: 0px; z-index: 21;">
-   <div id="cskh" style="position: fixed; left: 20px; bottom: 16px; z-index: 50; display: none;">
-    <a class="btn btnt" draggable="false" id="csk" style="width:95px; height:89px;" href="#">
-     <img class="nsi" border="0" draggable="false" width="95" height="89" src="img/ui/change-skin.png">
-    </a>
-   </div>
-
-   <div id="bskh" style="position: fixed; right: 20px; bottom: 16px; z-index: 50; display: none;">
-    <a class="btn btnt" draggable="false" id="bsk" style="width:102px; height:89px;" href="#">
-     <img class="nsi" border="0" draggable="false" width="102" height="89" src="img/ui/build-skin.png">
-    </a>
-   </div>
-
-   <div id="grqh" style="position: fixed; right: 20px; top: 16px; z-index: 50;">
-    <a class="btn btnt" draggable="false" id="grq" style="width:90px; height:87px;" href="#">
-     <img id="grqi" class="nsi" border="0" draggable="false" width="90" height="87" src="img/ui/high-quality.png">
-    </a>
+    <div id="playh"></div>
+    <div id="tips" class="nsi" aria-live="polite"></div>
    </div>
   </div>
 
-  <div id="pskh" style="display: none; opacity: 0; position: fixed; z-index: 52;">
-   <a class="btn btnt" draggable="false" id="psk" style="width:87px; height:88px;" href="#">
-    <img class="nsi" border="0" draggable="false" width="87" height="88" src="img/ui/prev.png">
-   </a>
+  <div id="smh">
+   <div id="cskh">
+    <button type="button" class="ui-text-btn" id="csk">
+     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.8-.8 1.8-1.8 0-.5-.2-.9-.5-1.2-.3-.3-.5-.8-.5-1.2 0-1 .8-1.8 1.8-1.8H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3Z"/><circle cx="7.5" cy="11.5" r="1.3"/><circle cx="10.5" cy="7.5" r="1.3"/><circle cx="15" cy="7.8" r="1.3"/></svg>
+     <span>Change skin</span>
+    </button>
+   </div>
+
+   <div id="bskh">
+    <button type="button" class="ui-text-btn" id="bsk">
+     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4Z"/><path d="m13.5 6.5 4 4"/></svg>
+     <span>Build skin</span>
+    </button>
+   </div>
+
+   <div id="grqh">
+    <button type="button" class="ui-text-btn" id="grq" aria-pressed="true">
+     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg>
+     <span id="grqi">High quality</span>
+    </button>
+   </div>
   </div>
 
-  <div id="nskh" style="display: none; opacity: 0; position: fixed; z-index: 52;">
-   <a class="btn btnt" draggable="false" id="nsk" style="width:87px; height:88px;" href="#">
-    <img class="nsi" border="0" draggable="false" width="87" height="88" src="img/ui/next.png">
-   </a>
+  <div id="pskh">
+   <button type="button" class="ui-round" id="psk" aria-label="Previous skin">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+   </button>
+  </div>
+
+  <div id="nskh">
+   <button type="button" class="ui-round" id="nsk" aria-label="Next skin">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+   </button>
   </div>
 
   <script src="js/game.js"></script>
